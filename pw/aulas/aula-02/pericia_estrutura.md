@@ -15,7 +15,7 @@ Duas páginas podem ser idênticas na tela e completamente diferentes por dentro
 
 **⏱️ Tempo:** 40 minutos     **👥 Formato:** individual, conferindo cada rodada com o colega ao lado
 
-> **Nome:** ____________________   **Turma:** ____________________   **Data:** ___ / ___ / ______
+> **Nome:** Kleber jardim da silva   **Turma:** PW   **Data:** 23 / 08 / 2026
 
 ## RODADA 01 — Div soup × semântico
 
@@ -25,21 +25,27 @@ Os dois trechos abaixo produzem exatamente a mesma tela. Um deles não diz nada 
 
 ```text
 <!-- PAGINA A -->                     <!-- PAGINA B -->
-<div class="topo">      (1) ______   <header>
-  <div class="menu">    (2) ______     <nav>
-<div class="miolo">     (3) ______   <main>
-  <div class="post">    (4) ______     <article>
-  <div class="lateral"> (5) ______     <aside>
-<div class="rodape">    (6) ______   <footer>
+<div class="topo">      (1)  header       <header>
+  <div class="menu">    (2)  nav             <nav>
+<div class="miolo">     (3)  main            <main>
+  <div class="post">    (4)  article            <article>
+  <div class="lateral"> (5)  aside             <aside>
+<div class="rodape">    (6)  footer              <footer>
 ```
 
 **Sua análise:**
 
 1. As duas páginas renderizam igual. O que exatamente a página B tem que a A não tem?
 
+A página B tem uma organização melhor e uma estrutura semântica.
+
 2. Escolha UMA das div acima e explique como você decidiu qual elemento a substitui.
 
+Div class= "menu". Decidi substituir pois o "menu" tem uma palavra chave que é o significado dele. No caso é o nav.
+
 3. Sobrou algum caso em que o div é a escolha certa? Quando?
+
+Não, pois todos os elementos do caso acima tem o significado na estrutura semântica
 
 ## RODADA 02 — O mapa da página
 
@@ -50,22 +56,28 @@ Desenhe no retângulo abaixo onde ficam as grandes regiões da página que você
 ```text
 +--------------------------------------------------+
 |                                                  |
-|                                                  |
-|                                                  |
-|                                                  |
-|                                                  |
+|          ....................                    |
+|          .                  .                    |
+|          .                  .                    |
+|          ....................                    |
 |                                                  |
 +--------------------------------------------------+
-  site investigado: ______________________________
+  site investigado: g1.globo.com
 ```
 
 **Sua análise:**
 
 1. Quantas regiões você conseguiu identificar sem abrir os nós filhos?
 
+4
+
 2. O site usa elementos semânticos ou div com class? Anote dois nomes de class que você viu.
 
+HEAder main e footer (nÃO ENCONTREI NO g1 E USEI O SITE DO SHOPPING DEL REY)
+
 3. Existe mais de um `<main>` na página? Deveria existir?
+
+Não existe. Só deve existir um main por página
 
 ## RODADA 03 — A hierarquia dos títulos
 
@@ -76,20 +88,25 @@ Esse comando lista os títulos na ordem em que aparecem no código. Anote os pri
 ```text
 ordem   tag    texto do titulo
 -----   ----   ------------------------------------
-  1     ____   ____________________________________
-  2     ____   ____________________________________
-  3     ____   ____________________________________
-  4     ____   ____________________________________
-  5     ____   ____________________________________
+  1     h3    Horarios de funcionamento
+  2     h4    lojas
+  3     h1    ops!!!
+  4     h2    vitrine
+  5     h4    Maiô jeniffer
 ```
 
 **Sua análise:**
 
 1. Quantos h1 a página tem? Se tem mais de um, qual seria o problema disso?
+  
+  1
 
-2. Algum nível foi pulado (um h2 seguido direto de um h4)? Anote onde.
+2. Algum nível foi pulado (um h2 seguido direto de um h4)? Anote onde
+na ordem 4 para o 5.
 
 3. Lendo só os títulos, você entende de que a página trata? Se não, o que está faltando?
+
+Nao entendo. Está faltando uma ordem.
 
 ## RODADA 04 — O alt que ninguém lê (mas alguém ouve)
 
@@ -99,22 +116,25 @@ Um leitor de tela lê o alt em voz alta no lugar da imagem. Anote os três prime
 
 ```text
 img 1  alt = _______________________________________
-       ( ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
+       ( ) descritivo  (x) inutil  ( ) ausente  ( ) vazio proposital
 
 img 2  alt = _______________________________________
-       ( ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
+       ( ) descritivo  (x) inutil  ( ) ausente  ( ) vazio proposital
 
-img 3  alt = _______________________________________
-       ( ) descritivo  ( ) inutil  ( ) ausente  ( ) vazio proposital
+
 ```
 
 **Sua análise:**
 
 1. Algum alt era só o nome do arquivo ("banner-2024-final.jpg")? Por que isso é inútil?
+sim, porque não descreve o que é a imagem em si, apenas o nome que não significa nada
 
 2. Feche os olhos e imagine ouvir a página. O que você perderia com esses alt?
 
+Não conseguiria entender o que é, já que o alt diz o nome do arquivo (que nao diz nada)
+
 3. Reescreva o pior dos três de forma que descreva a imagem em menos de 12 palavras.
+imagem 2: Poderia escrever apenas "Sorteio pais", 
 
 ## RODADA 05 — O link fora de contexto
 
@@ -123,18 +143,21 @@ img 3  alt = _______________________________________
 Leitores de tela permitem navegar por uma lista só de links, sem o texto ao redor. Anote 3 textos de link e teste se sobrevivem sozinhos:
 
 ```text
-link 1: "____________________"  faz sentido sozinho? ( )sim ( )nao
-link 2: "____________________"  faz sentido sozinho? ( )sim ( )nao
-link 3: "____________________"  faz sentido sozinho? ( )sim ( )nao
+link 1: "Acessar todos os horários"  faz sentido sozinho? (x)sim ( )nao
+link 2: "Mapa Interno"  faz sentido sozinho? (x)sim ( )nao
+link 3: "Como Chegar"  faz sentido sozinho? (x)sim ( )nao
 ```
 
 **Sua análise:**
 
 1. Você encontrou algum "clique aqui", "saiba mais" ou "leia"? Para onde ele levava?
+Não
 
 2. Reescreva um desses textos para que ele diga o destino sem depender da frase ao redor.
+Acessar todos os horários
 
 3. Algum link abria em nova aba? Como você descobriu isso olhando o código?
+Sim, não descobri olhando o código, apenas por intuição iria abrir os horários em outra aba
 
 ## 🏆 DESAFIO BÔNUS
 
