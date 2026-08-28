@@ -1,23 +1,154 @@
-<!DOCTYPE html>​
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compre seu café — Belo Horizonte</title>
+  <!--
+    PAGINA B — semantica
+    Mesmo conteudo e mesma aparencia da pagina-a.html, porem cada bloco usa o elemento
+    que diz o que ele E: header, nav, main, article, aside, footer, h1/h2/h3, p, ul.
+    O CSS abaixo e IDENTICO ao da pagina-a.html.
+    NAO altere o CSS de um arquivo sem alterar o do outro.
+  -->
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, Segoe UI, Arial, sans-serif;
+      color: #1e293b;
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+    .topo, header { background: #F9790F; color: #fff; padding: 24px 32px 16px; }
+    .titulo-site, .site-nome { font-size: 26px; font-weight: 700; margin: 0 0 4px; }
+    .subtitulo-site { font-size: 14px; color: #aec3e0; margin: 0; }
+    .menu, nav { background: #2e75b6; padding: 10px 32px; }
+    .menu a, nav a { color: #fff; text-decoration: none; margin-right: 20px; font-size: 14px; }
+    .menu a:hover, nav a:hover { text-decoration: underline; }
+    .conteudo { display: flex; gap: 24px; padding: 28px 32px; align-items: flex-start; }
+    .miolo, main { flex: 1 1 auto; }
+    .lateral, aside {
+      flex: 0 0 250px; background: #fff; border: 1px solid #e2e8f0;
+      border-radius: 6px; padding: 16px 20px;
+    }
+    .post, article {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 6px;
+      padding: 20px 24px; margin-bottom: 20px;
+    }
+    .titulo-g, h1 { font-size: 24px; font-weight: 700; color: #1f3864; margin: 0 0 12px; }
+    .titulo-m, h2 { font-size: 19px; font-weight: 700; color: #1f3864; margin: 0 0 10px; }
+    .titulo-p, h3 { font-size: 15px; font-weight: 700; color: #2e75b6; margin: 0 0 6px; }
+    .texto, p { margin: 0 0 12px; }
+    .lista, ul { margin: 0 0 12px; padding-left: 22px; }
+    .rodape, footer {
+      background: #1f3864; color: #aec3e0; padding: 18px 32px;
+      font-size: 13px; text-align: center;
+    }
+    .selo { display: inline-block; background: #eef3fa; color: #1f3864;
+      border-radius: 4px; padding: 2px 8px; font-size: 12px; font-weight: 700; }
+  </style>
+</head>
+<body>
 
-<html lang="pt-BR">​
+  <header>
+    <p class="site-nome">Compre seu café — Belo Horizonte</p>
+    <p class="subtitulo-site">Produtos de qualidade feito na hora certa</p>
+  </header>
 
-<head>​
+  <nav>
+    <a href="#cardápio">Cardápio</a>
+    <a href="#como-pedir">Como pedir</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
-<meta charset="UTF-8">​
+  <div class="conteudo">
+    <main>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">​
+      <article>
+        <h1>Produtos disponíveis</h1>
+        <p>
+          Todos os produtos desta página são de qualidade e preparados na hora certa.
+        </p>
+      </article>
 
-<title>Projeto de Programação Web</title>​
+      <article id="cardápio">
+        <h2>Pão francês</h2>
+        <h3>Pão de sal quentinho</h3>
+        <p>
+          farinha de trigo, água, sal e fermento. Ideal para o café da manhã.
+        </p>
+        <p class="selo">vegano</p>
+      </article>
 
-</head>​
+      <article>
+        <h2>Pão de queijo</h2>
+        <h3>Pão de queijo caseiro</h3>
+        <p>
+          Queijo minas, farinha de trigo e manteiga. Ideal para o café da manhã.
+        </p>
 
-<body>​
+        <p class="selo">sem glúten</p>
+      </article>
+      <article>
+        <h2>bolo</h2>
+        <h3>Bolo de cenoura</h3>
+        <p>
+          Cenoura, farinha de trigo, ovos e açúcar. Ideal para o café da manhã.
+        </p>
+         <p class="selo">principal produto</p>
 
-<h1>Meu projeto do semestre</h1>​
+      </article>
 
-<p>Aqui começa o site que vou construir nas próximas 9 aulas.</p>​
+      <article>
+        <h2>Café</h2>
+        <h3>Café preto</h3>
+        <p>
+          Grãos de café 100% arábica, moído na hora. Ideal para o café da manhã.
+        </p>
+        <p class="selo">vegano</p>
+        <p class="selo">sem glúten</p> 
 
-</body>​
+      </article>
+      
+      <article>
+        <h2>suco natural</h2>
+        <h3>Suco de laranja</h3>
+        <p>
+          Laranja fresca, água e açúcar. Ideal para o café da manhã.
+        </p>
+        <p class="selo">natural</p>
 
-</html>​
+      </article>
+
+
+      
+
+      <section id="como-pedir">
+        <h2>Como pedir</h2>
+        <ul>
+          <li>Escolha os produtos e envie o formulário.</li>
+          <li>Realize o pagamento.</li>
+          <li>Receba o produto em casa ou busque presencialmente.</li>
+          
+        </ul>
+      </section>
+
+    </main>
+
+    <aside>
+      <h3>Não encontrou seu produto preferido em nosso cardápio?</h3>
+      <p>
+        Envie uma solicitação que podemos incluir no cardápio.
+      </p>
+      <h3>Horário</h3>
+      <p>Seg a sex, 9h às 17h</p>
+    </aside>
+  </div>
+
+  <footer id="contato">
+    Projeto Seu café quentinho · Belo Horizonte/MG · Pãozão@exemplo.org
+  </footer>
+
+</body>
+</html>
