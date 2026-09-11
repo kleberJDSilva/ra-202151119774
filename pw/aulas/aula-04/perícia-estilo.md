@@ -80,17 +80,16 @@ A propriedade color pode ser herdada do elemento pai quando não existe uma decl
 Volte ao quiz do início da aula. Agora não é para adivinhar: conte os id, as classes e os elementos de cada seletor e escreva a soma antes de conferir no DevTools.
 
 ```text
-cx  seletor vencedor            especificidade   cor final
---  --------------------------  --------------   ---------
- 1  #alvo1                                    (1 , 0, 0)      _________
- 2  #c2 p                                     (1 , 0 , 1)      _________
- 3  .empate (segunda declaração)              (0 , 1 , 0)      _________
- 4  style="color: #c0392b"                  (1 , 0 , 0, 0)      _________
- 5  #alvo5 { color: #27ae60 !important; }   (1 , 0 , 0 + !important)      _________
- 6  .a6.b6                                    (0 , 2 , 0)      _________
- 7  #c7 (herança)                             (1, 0 , 0)      _________
- 8 .card8 .destaque8 span                      (0 , 2 , 1)      _________
-```
+cx  seletor vencedor                          especificidade                cor final
+--  --------------------------                  --------------                 ---------
+ 1  #alvo1                                    (1 , 0, 0)                      vermelho
+ 2  #c2 p                                     (1 , 0 , 1)                      vermelho
+ 3  .empate (segunda declaração)              (0 , 1 , 0)                       verde
+ 4  style="color: #c0392b"                  (1 , 0 , 0, 0)                    vermelho
+ 5  #alvo5 { color: #27ae60 !important; }   (1 , 0 , 0 + !important)           verde
+ 6  .a6.b6                                    (0 , 2 , 0)                       verde
+ 7  #c7 (herança)                             (1, 0 , 0)                        verdee
+ 8 .card8 .destaque8 span                      (0 , 2 , 1)                      vermelho
 
 **Sua análise:**
 
