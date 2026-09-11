@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!--
+    ============================================================
+    SITE NAO RESPONSIVO E NAO ACESSIVEL — Aula 8
+    ============================================================
+    ANTI-EXEMPLO PROPOSITAL. NAO CORRIJA: os defeitos sao o conteudo da aula.
+    Usado na fase Engajar (projetado em 360px) e nas Rodadas 1, 2 e 5 do handout.
+
+    DEFEITOS DE RESPONSIVIDADE (Rodadas 1 e 2):
+      R1. FALTA a meta viewport  -> o celular finge ter 980px e reduz tudo
+      R2. .container com width: 1100px fixo -> gera rolagem horizontal
+      R3. imagem com width: 900px fixo -> estoura a tela
+      R4. tabela larga sem tratamento -> empurra o layout
+      R5. fontes em px -> ignoram a configuracao do usuario
+      R6. nenhuma @media query no arquivo
+
+    DEFEITOS DE ACESSIBILIDADE (Rodada 5 e Lighthouse):
+      A1. contraste baixissimo: #b8b8b8 sobre #fff (~1.9:1)
+      A2. outline: none sem substituto -> foco invisivel no teclado
+      A3. imagem sem alt
+      A4. "botao" que e uma <div> com onclick -> teclado nao alcanca
+      A5. texto de link generico: "clique aqui"
+      A6. hierarquia de titulos pulando de h1 para h4
+      A7. informacao transmitida SO pela cor (o "disponivel" verde)
+      A8. area de toque minuscula (link de 10px)
+
+    ROTEIRO DA DEMONSTRACAO (Engajar):
+      1. Abrir no modo dispositivo (Ctrl+Shift+M) em 360px -> rolagem horizontal
+      2. Rodar Lighthouse -> aba Accessibility -> mostrar a nota
+      3. Navegar com Tab -> nao se ve onde esta o foco, e o "botao" e inalcancavel
+  -->
+  <title>Feira de Adoção 2026</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0; background: #fff; color: #333;
+    }
+    /* R2 — largura fixa: a origem da rolagem horizontal */
+    .container { width: 1100px; margin: 0 auto; padding: 20px; }
+
+    /* R5 — tudo em px: ignora a configuracao de fonte do usuario */
+    h1 { font-size: 34px; margin: 0 0 6px; }
+    h4 { font-size: 18px; margin: 26px 0 8px; }   /* A6 — pula de h1 para h4 */
+    p  { font-size: 14px; line-height: 20px; }
+
+    /* A1 — contraste ~1.9:1, muito abaixo dos 4.5:1 exigidos */
+    .apoio { color: #b8b8b8; font-size: 13px; }
+
+    /* R3 — imagem com largura fixa maior que a tela do celular */
+    .banner { width: 900px; height: 220px; background: #2e75b6; display: block; }
+
+    .topo { background: #1f3864; color: #fff; padding: 14px 20px; }
+    .topo a {
+      color: #cfd8e3; margin-right: 16px; text-decoration: none;
+      font-size: 10px;                 /* A8 — area de toque minuscula */
+    }
+    /* A2 — foco invisivel: o pecado de acessibilidade mais comum em CSS */
+    .topo a:focus, .falso-botao:focus { outline: none; }
+
+    /* R4 — tabela larga que empurra o layout */
+    table { border-collapse: collapse; width: 1000px; margin-top: 16px; }
+    td, th { border: 1px solid #ddd; padding: 8px; font-size: 13px; text-align: left; }
+
+    /* A4 — "botao" que nao e botao */
+    .falso-botao {
+      background: #27ae60; color: #fff; padding: 10px 18px;
+      display: inline-block; margin-top: 14px; cursor: pointer; font-size: 14px;
+    }
+
+    /* A7 — status transmitido APENAS pela cor */
+    .status-ok   { color: #27ae60; font-weight: bold; }
+    .status-nao  { color: #c0392b; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <div class="topo">
+    <strong>Feira de Adoção</strong>
+    <a href="#">Início</a>
+    <a href="#">Pets</a>
+    <a href="#">Contato</a>
+  </div>
+
+  <div class="container">
+
+    <!-- A3 — imagem sem alt -->
+    <img class="banner" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+
+    <h1>Feira de Adoção 2026</h1>
+    <p class="apoio">Sábado, 14 de março, das 9h às 17h — Praça da Liberdade</p>
+
+    <p>
+      Traga a família e conheça os animais disponíveis para adoção. Todos vacinados,
+      vermifugados e castrados. A adoção é gratuita e acompanhada de entrevista.
+    </p>
+
+    <!-- A6 — salto de h1 direto para h4 -->
+    <h4>Animais confirmados</h4>
+
+    <!-- R4 — tabela de 1000px -->
+    <table>
+      <tr>
+        <th>Nome</th><th>Espécie</th><th>Idade</th><th>Porte</th>
+        <th>Temperamento</th><th>Status</th>
+      </tr>
+      <tr>
+        <td>Luna</td><td>Cadela</td><td>3 anos</td><td>Médio</td>
+        <td>Calma, sabe passear na guia</td>
+        <!-- A7 — o status depende so da cor para ser entendido -->
+        <td class="status-ok">●</td>
+      </tr>
+      <tr>
+        <td>Thor</td><td>Cão</td><td>1 ano</td><td>Grande</td>
+        <td>Enérgico, precisa de espaço</td>
+        <td class="status-ok">●</td>
+      </tr>
+      <tr>
+        <td>Mel</td><td>Gata</td><td>2 anos</td><td>Pequeno</td>
+        <td>Dócil, convive com outros gatos</td>
+        <td class="status-nao">●</td>
+      </tr>
+    </table>
+
+    <h4>Como participar</h4>
+    <p>
+      Leia o regulamento completo da feira e os requisitos para adoção responsável.
+      <!-- A5 — texto de link generico -->
+      <a href="#">Clique aqui</a>.
+    </p>
+
+    <!-- A4 — div com onclick: o teclado nao alcanca, o leitor de tela nao anuncia -->
+    <div class="falso-botao" onclick="alert('Inscrição enviada!')">Quero me inscrever</div>
+
+    <p class="apoio">
+      Realização: Projeto Adote um Pet — contato@exemplo.org
+    </p>
+  </div>
+
+</body>
+</html>
