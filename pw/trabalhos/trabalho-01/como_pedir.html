@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como pedir? </title>
+  <!--
+    PAGINA B — semantica
+    Mesmo conteudo e mesma aparencia da pagina-a.html, porem cada bloco usa o elemento
+    que diz o que ele E: header, nav, main, article, aside, footer, h1/h2/h3, p, ul.
+    O CSS abaixo e IDENTICO ao da pagina-a.html.
+    NAO altere o CSS de um arquivo sem alterar o do outro.
+  -->
+  <style>
+    * {
+      box-sizing: border-box;}
+
+    body {
+      margin: 0;
+      font-family: system-ui, Segoe UI, Arial, sans-serif;
+      color: #4a3426;
+      background: #fdf8f1;
+      line-height: 1.6;
+    }
+
+    .topo, header {background: #8b4513;color: #fff;padding: 24px 32px 16px;}
+    .titulo-site, .site-nome {font-size: 26px; font-weight: 700; margin: 0 0 4px;}
+    .subtitulo-site {font-size: 14px; color: #f3d7b5; margin: 0;}
+    .menu, nav { background: #c47a3a; padding: 10px 32px;}
+    .menu a, nav a {color: #fff; text-decoration: none; margin-right: 20px; font-size: 14px;}
+    .menu a:hover,nav a:hover { text-decoration: underline;}
+    .conteudo {display: flex; gap: 24px; padding: 28px 32px;align-items: flex-start;}
+    .miolo, main {flex: 1 1 auto;}
+    .lateral,aside {
+      flex: 0 0 250px; background: #fffaf3; border: 1px solid #ead8c2;
+      border-radius: 6px; padding: 16px 20px;
+    }
+    .post, article {
+      background: #fffaf3; border: 1px solid #ead8c2; border-radius: 6px;
+      padding: 20px 24px; margin-bottom: 20px;
+    }
+    .titulo-g, h1 { font-size: 24px; font-weight: 700; color: #6b3415; margin: 0 0 12px;}
+    .titulo-m, h2 {font-size: 19px; font-weight: 700; color: #6b3415; margin: 0 0 10px;}
+    .titulo-p,h3 {font-size: 15px; font-weight: 700; color: #b5651d; margin: 0 0 6px;}
+    .texto, p {margin: 0 0 12px;}
+    .lista, ul { margin: 0 0 12px; padding-left: 22px;}
+    figure {margin: 20px 0;}
+    figure img {max-width: 100%; border-radius: 6px;}
+    figcaption {font-size: 13px;}
+    .rodape, footer {background: #5a2d18; color: #e8c9a8; padding: 18px 32px; font-size: 13px; text-align: center;}
+    .selo {display: inline-block; background: #f5e6d2; color: #6b3415;
+      border-radius: 4px; padding: 2px 8px; font-size: 12px; font-weight: 700;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="site-nome">Como pedir?</p>
+    <p class="subtitulo-site">Abaixo como funcionamos para você não ficar com dúvidas</p>
+  </header>
+
+  <div class="conteudo">
+
+    <main>
+
+      <article>
+        <h1>Vamos começar o dia bem?</h1>
+
+        <p>
+          Se é a sua primeira vez, seja bem-vindo! Aqui você vai encontrar informações sobre como
+        pedir nossos produtos e como funciona o nosso processo de entrega.
+        </p>
+
+        <p>
+          Porque para nós, qualidade também significa servir no momento certo. ☕🥖
+        </p>
+
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80"
+            alt="Café quente servido em uma cafeteria">
+          <figcaption>Um café fresquinho preparado na hora certa.</figcaption>
+        </figure>
+
+      </article>
+
+      <article id="1 passo">
+        <h2>Escolha seus produtos</h2>
+
+        <p>
+          Navegue pelo nosso cardápio e escolha os produtos que deseja. Adicione-os ao seu pedido.
+        </p>
+      </article>
+
+      <article id="2 passo">
+        <h2>Preencha nosso formulário</h2>
+
+        <p>
+          Preencha o formulário de pedido com seus dados e informações de entrega. Certifique-se de
+          fornecer um endereço correto para que possamos entregar seu pedido sem problemas.
+        </p>
+      </article>
+
+      <article id="3 passo">
+        <h2>Pagamento</h2>
+
+        <p>
+          Realize o pagamento do seu pedido de acordo com as opções disponíveis. Aceitamos diversos
+          métodos de pagamento para sua conveniência.
+        </p>
+      </article>
+
+      <article id="4 passo">
+        <h2>Aproveite seu café!</h2>
+
+        <p>
+          Após a confirmação do pagamento, seu pedido será preparado e entregue no endereço fornecido.
+          Aproveite seu café fresquinho e produtos de qualidade!
+        </p>
+      </article>
+
+
+    </main>
+
+    <aside>
+      <h3>Não encontrou seu produto preferido em nosso cardápio?</h3>
+
+      <p>
+        Envie uma solicitação que podemos incluir no cardápio.
+      </p>
+
+      <h3>Horário</h3>
+
+      <p>Seg a sex, 9h às 17h</p>
+    </aside>
+
+  </div>
+
+  <footer id="contato">
+    Projeto Seu café quentinho · Belo Horizonte/MG · Pãozão@exemplo.org
+  </footer>
+
+</body>
+
+</html>
