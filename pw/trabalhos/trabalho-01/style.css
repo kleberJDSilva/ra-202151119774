@@ -14,12 +14,12 @@
   --cor-rodape: #5a2d18;
   --cor-texto-rodape: #e8c9a8;
   --cor-selo: #f5e6d2;
-    --fonte-principal: system-ui, "Segoe UI", Arial, sans-serif;
+  --fonte-principal: system-ui, "Segoe UI", Arial, sans-serif;
 
-    --espacamento-pequeno: 10px;
-     --espacamento-medio: 20px;
-    --espacamento-grande: 28px;
-    --raio-borda: 6px;
+   --espacamento-pequeno: 10px;
+   --espacamento-medio: 20px;
+  --espacamento-grande: 28px;
+  --raio-borda: 6px;
 }
 
 
@@ -88,6 +88,14 @@ nav a:hover {
 
 main {
   flex: 1 1 auto;
+}
+
+/* PRODUTOS GRID */
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 
