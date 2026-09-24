@@ -196,3 +196,45 @@ footer {
   text-align: center;
 }
 
+/* ACESSIBILIDADE 320px */
+
+@media (max-width: 320px) {
+  .conteudo {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  aside {
+    flex: none;
+    width: 100%;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    padding: 10px 20px;
+  }
+
+  nav a {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  header {
+    padding: 20px;
+  }
+}
+
+
+/* FOCO PELO TECLADO */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
