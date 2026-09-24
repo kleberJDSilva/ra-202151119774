@@ -35,4 +35,4 @@ No Visual Studio Code, também é possível utilizar a extensão Live Server e s
 
 6.3 Uso de IA
 
-A Inteligência Artificial será utilizada como ferramenta de apoio durante o desenvolvimento do projeto, auxiliando na compreensão de conceitos, esclarecimento de dúvidas, identificação de possíveis erros e aplicação de boas práticas de desenvolvimento. O código será analisado, compreendido e adaptado pelo aluno, utilizando a IA como recurso de aprendizagem e apoio ao desenvolvimento do projeto.
+A Inteligência Artificial foi utilizada como ferramenta de apoio durante o desenvolvimento do projeto, auxiliando na compreensão de conceitos, esclarecimento de dúvidas e ajudando na criatividade das cores usadas no site.  O código foi analisado e compreendido.
