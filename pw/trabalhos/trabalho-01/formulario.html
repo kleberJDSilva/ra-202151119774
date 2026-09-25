@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazer pedido</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <header>
+    <p class="site-nome">Fazer pedido</p>
+    <p class="subtitulo-site">
+      Preencha o formulário para realizar seu pedido
+    </p>
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="como-pedir.html">Como pedir</a>
+    <a href="cardapio.html">Cardápio</a>
+    <a href="formulario.html">Fazer pedido</a>
+  </nav>
+
+  <div class="conteudo">
+
+    <main>
+
+      <article>
+        <h1>Faça seu pedido</h1>
+
+        <p>
+          Preencha os dados abaixo para realizar seu pedido.
+          Confira as informações antes de enviar.
+        </p>
+      </article>
+
+      <article>
+
+        <h2>Formulário de pedido</h2>
+
+        <form>
+
+          <p>
+            <label for="nome">Nome completo:</label><br>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              required
+              pattern="[A-Za-zÀ-ÿ\s]{3,}"
+              title="Digite seu nome completo usando apenas letras e espaços."
+            >
+          </p>
+
+          <p>
+            <label for="telefone">Telefone para contato:</label><br>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              required
+              pattern="[0-9]{10,11}"
+              title="Digite um telefone com 10 ou 11 números."
+              placeholder="Ex.: 31999999999"
+            >
+          </p>
+
+          <p>
+            <label for="endereco">Endereço:</label><br>
+            <input
+              type="text"
+              id="endereco"
+              name="endereco"
+              required
+            >
+          </p>
+
+          <p>
+            <label>Como deseja receber o pedido?</label><br>
+
+            <input
+              type="radio"
+              id="retirada"
+              name="tipo-pedido"
+              value="retirada"
+              required
+            >
+            <label for="retirada">Retirada na loja</label>
+
+            <br>
+
+            <input
+              type="radio"
+              id="entrega"
+              name="tipo-pedido"
+              value="entrega"
+            >
+            <label for="entrega">Entrega</label>
+          </p>
+
+          <p>
+            <label for="pagamento">Forma de pagamento:</label><br>
+
+            <select
+              id="pagamento"
+              name="pagamento"
+              required
+            >
+              <option value="">Selecione uma opção</option>
+              <option value="pix">Pix</option>
+              <option value="cartao">Cartão</option>
+              <option value="dinheiro">Dinheiro</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="horario">Horário da entrega/retirada:</label><br>
+
+            <input
+              type="time"
+              id="horario"
+              name="horario"
+              required
+            >
+          </p>
+
+          <p>
+            <button type="submit">Enviar pedido</button>
+          </p>
+
+        </form>
+
+      </article>
+
+    </main>
+
+    <aside>
+
+      <h3>Precisa de ajuda?</h3>
+
+      <p>
+        Consulte a página "Como pedir" para saber mais sobre
+        nosso processo de pedido e entrega.
+      </p>
+
+      <h3>Horário</h3>
+
+      <p>Seg a sex, 9h às 17h</p>
+
+    </aside>
+
+  </div>
+
+  <footer id="contato">
+    Projeto Seu café quentinho · Belo Horizonte/MG · Pãozão@exemplo.org
+  </footer>
+
+</body>
+</html>
+```
