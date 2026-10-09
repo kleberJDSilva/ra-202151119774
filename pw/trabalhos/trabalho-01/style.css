@@ -1,240 +1,363 @@
-
-/*VARIÁVEIS*/
+/* =========================
+   VARIÁVEIS
+========================= */
 
 :root {
+  /* Cores */
   --cor-fundo: #fdf8f1;
   --cor-texto: #4a3426;
   --cor-header: #8b4513;
-  --cor-menu: #c47a3a;
+  --cor-menu: #9a5720;
   --cor-titulo: #6b3415;
-  --cor-subtitulo: #b5651d;
+  --cor-subtitulo: #9b4a12;
   --cor-subtitulo-header: #f3d7b5;
   --cor-card: #fffaf3;
   --cor-borda: #ead8c2;
   --cor-rodape: #5a2d18;
   --cor-texto-rodape: #e8c9a8;
   --cor-selo: #f5e6d2;
+  --cor-branco: #ffffff;
+  --cor-foco: #000000;
+
+  /* Tipografia */
   --fonte-principal: system-ui, "Segoe UI", Arial, sans-serif;
 
-   --espacamento-pequeno: 10px;
-   --espacamento-medio: 20px;
-  --espacamento-grande: 28px;
-  --raio-borda: 6px;
+  --fonte-xs: 0.8125rem;
+  --fonte-sm: 0.875rem;
+  --fonte-base: 1rem;
+  --fonte-lg: 1.1875rem;
+  --fonte-xl: 1.5rem;
+  --fonte-site: 1.625rem;
+
+  /* Espaçamentos */
+  --espacamento-xs: 0.25rem;
+  --espacamento-sm: 0.5rem;
+  --espacamento-md: 1rem;
+  --espacamento-lg: 1.5rem;
+  --espacamento-xl: 2rem;
+
+  --raio-borda: 0.375rem;
 }
 
 
-/*CONFIGURAÇÕES */
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
 
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: var(--fonte-principal);
+  font-size: var(--fonte-base);
   color: var(--cor-texto);
   background: var(--cor-fundo);
   line-height: 1.6;
 }
 
 
-/* CABEÇALHO*/
+/* =========================
+   CABEÇALHO
+========================= */
 
 header {
   background: var(--cor-header);
-  color: #fff;
-  padding: 24px 32px 16px;
+  color: var(--cor-branco);
+  padding: var(--espacamento-lg) var(--espacamento-xl)
+    var(--espacamento-md);
 }
 
 .site-nome {
-  font-size: 26px;
+  font-size: var(--fonte-site);
   font-weight: 700;
-  margin: 0 0 4px;
+  margin: 0 0 var(--espacamento-xs);
 }
 
 .subtitulo-site {
-  font-size: 14px;
+  font-size: var(--fonte-sm);
   color: var(--cor-subtitulo-header);
   margin: 0;
 }
 
 
-/*MENU*/
+/* =========================
+   NAVEGAÇÃO - FLEXBOX
+========================= */
 
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-sm);
   background: var(--cor-menu);
-  padding: var(--espacamento-pequeno) 32px;
+  padding: var(--espacamento-sm) var(--espacamento-md);
 }
 
 nav a {
-  color: #fff;
+  color: var(--cor-branco);
   text-decoration: none;
-  margin-right: 20px;
-  font-size: 14px;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  font-size: var(--fonte-sm);
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   text-decoration: underline;
 }
 
 
-/*CONTEÚDO */
+/* =========================
+   ESTRUTURA PRINCIPAL - GRID
+========================= */
 
 .conteudo {
-  display: flex;
-  gap: 24px;
-  padding: var(--espacamento-grande) 32px;
-  align-items: flex-start;
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: var(--espacamento-lg) var(--espacamento-md);
+
+  display: grid;
+  grid-template-areas:
+    "principal"
+    "lateral";
+
+  gap: var(--espacamento-lg);
 }
 
 main {
-  flex: 1 1 auto;
-}
+  grid-area: principal;
 
-/* PRODUTOS GRID */
-
-.produtos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: var(--espacamento-lg);
 }
 
+aside {
+  grid-area: lateral;
 
-/*ARTIGOS*/
-
-article {
   background: var(--cor-card);
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio-borda);
-  padding: 20px 24px;
-  margin-bottom: var(--espacamento-medio);
+  padding: var(--espacamento-md);
 }
 
 
-/* TÍTULOS */
+/* =========================
+   CARDS E SEÇÕES
+========================= */
+
+article,
+section {
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-lg);
+}
+
+
+/* =========================
+   PRODUTOS - GRID RESPONSIVO
+========================= */
+
+.produtos {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(15rem, 1fr));
+
+  gap: var(--espacamento-lg);
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
 
 h1 {
-  font-size: 24px;
+  font-size: var(--fonte-xl);
   font-weight: 700;
   color: var(--cor-titulo);
-  margin: 0 0 12px;
+  margin: 0 0 var(--espacamento-md);
 }
 
 h2 {
-  font-size: 19px;
+  font-size: var(--fonte-lg);
   font-weight: 700;
   color: var(--cor-titulo);
-  margin: 0 0 10px;
+  margin: 0 0 var(--espacamento-sm);
 }
 
 h3 {
-  font-size: 15px;
+  font-size: var(--fonte-base);
   font-weight: 700;
   color: var(--cor-subtitulo);
-  margin: 0 0 6px;
+  margin: 0 0 var(--espacamento-sm);
 }
 
 
-/* TEXTOS E LISTAS*/
+/* =========================
+   TEXTOS E LISTAS
+========================= */
 
 p {
-  margin: 0 0 12px;
+  margin: 0 0 var(--espacamento-md);
 }
 
-ul {
-  margin: 0 0 12px;
-  padding-left: 22px;
+ul,
+ol {
+  margin: 0;
+  padding-left: var(--espacamento-lg);
 }
 
 
-/*IMAGENS */
+/* =========================
+   IMAGENS
+========================= */
 
 figure {
-  margin: var(--espacamento-medio) 0;
+  margin: var(--espacamento-md) 0;
 }
 
 figure img {
+  display: block;
   max-width: 100%;
+  height: auto;
   border-radius: var(--raio-borda);
 }
 
 figcaption {
-  font-size: 13px;
+  margin-top: var(--espacamento-sm);
+  font-size: var(--fonte-xs);
 }
 
 
-/* BARRA LATERAL */
-
-aside {
-  flex: 0 0 250px;
-  background: var(--cor-card);
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--raio-borda);
-  padding: 16px 20px;
-}
-
-
-/*SELOS*/
+/* =========================
+   SELOS
+========================= */
 
 .selo {
   display: inline-block;
   background: var(--cor-selo);
   color: var(--cor-titulo);
-  border-radius: 4px;
-  padding: 2px 8px;
-  font-size: 12px;
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  font-size: var(--fonte-xs);
   font-weight: 700;
 }
 
 
-/* RODAPÉ */
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+  display: grid;
+  gap: var(--espacamento-md);
+}
+
+fieldset {
+  display: grid;
+  gap: var(--espacamento-sm);
+
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-md);
+}
+
+legend,
+label {
+  font-weight: 700;
+}
+
+legend {
+  color: var(--cor-titulo);
+}
+
+form p {
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--espacamento-sm);
+
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-base);
+
+  color: var(--cor-texto);
+  background: var(--cor-branco);
+
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+button {
+  background: var(--cor-menu);
+  color: var(--cor-branco);
+
+  border: 0;
+  border-radius: var(--raio-borda);
+
+  padding: var(--espacamento-sm) var(--espacamento-md);
+
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-base);
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
 
 footer {
   background: var(--cor-rodape);
   color: var(--cor-texto-rodape);
-  padding: 18px 32px;
-  font-size: 13px;
+
+  padding: var(--espacamento-md) var(--espacamento-xl);
+
+  font-size: var(--fonte-xs);
   text-align: center;
 }
 
-/* ACESSIBILIDADE 320px */
 
-@media (max-width: 320px) {
-  .conteudo {
-    flex-direction: column;
-    padding: 20px;
-  }
+/* =========================
+   FOCO PELO TECLADO
+========================= */
 
-  aside {
-    flex: none;
-    width: 100%;
-  }
-
-  .produtos {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    padding: 10px 20px;
-  }
-
-  nav a {
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  header {
-    padding: 20px;
-  }
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
 }
 
 
-/* FOCO PELO TECLADO */
+/* =========================
+   RESPONSIVIDADE
+========================= */
 
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid #000;
-  outline-offset: 2px;
+/*
+  Breakpoint escolhido quando há espaço suficiente
+  para conteúdo principal e barra lateral ficarem
+  lado a lado sem apertar o conteúdo.
+*/
+
+@media (min-width: 48rem) {
+  .conteudo {
+    grid-template-columns: minmax(0, 1fr) 16rem;
+
+    grid-template-areas:
+      "principal lateral";
+  }
 }
