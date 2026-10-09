@@ -33,6 +33,15 @@ O projeto pode ser executado diretamente pelo arquivo index.html.
 
 No Visual Studio Code, também é possível utilizar a extensão Live Server e selecionar a opção Open with Live Server no arquivo index.html.
 
+
+
+Primeira nota Lighthouse:
+
+Performance: 100
+Accessibility: 92
+Best Practices: 100
+SEO: 91
+
 6.3 Uso de IA
 
 A Inteligência Artificial foi utilizada como ferramenta de apoio durante o desenvolvimento do projeto, auxiliando na compreensão de conceitos, esclarecimento de dúvidas e ajudando na criatividade das cores usadas no site.  O código foi analisado e compreendido.
