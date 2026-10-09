@@ -42,6 +42,14 @@ Accessibility: 92
 Best Practices: 100
 SEO: 91
 
+Segunda nota Lighthouse:
+
+Performance: 100
+Accessibility: 100
+Best Practices: 100
+SEO: 90
+
+
 6.3 Uso de IA
 
 A Inteligência Artificial foi utilizada como ferramenta de apoio durante o desenvolvimento do projeto, auxiliando na compreensão de conceitos, esclarecimento de dúvidas e ajudando na criatividade das cores usadas no site.  O código foi analisado e compreendido.
