@@ -1,0 +1,23 @@
+   body {
+     font-family: sans-serif;
+     padding: 24px;
+   }
+   
+   .titulo {
+     color: rebeccapurple;
+   }
+
+   .cartao {
+  border: 2px solid #cccccc;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 180px;
+}
+
+.lista-cartoes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
