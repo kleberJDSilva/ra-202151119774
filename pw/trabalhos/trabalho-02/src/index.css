@@ -56,3 +56,308 @@ body {
   background: var(--cor-fundo);
   line-height: 1.6;
 }
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+  background: var(--cor-header);
+  color: var(--cor-branco);
+  padding: var(--espacamento-lg) var(--espacamento-xl)
+    var(--espacamento-md);
+}
+
+.site-nome {
+  font-size: var(--fonte-site);
+  font-weight: 700;
+  margin: 0 0 var(--espacamento-xs);
+}
+
+.subtitulo-site {
+  font-size: var(--fonte-sm);
+  color: var(--cor-subtitulo-header);
+  margin: 0;
+}
+
+
+/* =========================
+   NAVEGAÇÃO - FLEXBOX
+========================= */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-sm);
+  background: var(--cor-menu);
+  padding: var(--espacamento-sm) var(--espacamento-md);
+}
+
+nav a {
+  color: var(--cor-branco);
+  text-decoration: none;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  font-size: var(--fonte-sm);
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   ESTRUTURA PRINCIPAL - GRID
+========================= */
+
+.conteudo {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: var(--espacamento-lg) var(--espacamento-md);
+
+  display: grid;
+  grid-template-areas:
+    "principal"
+    "lateral";
+
+  gap: var(--espacamento-lg);
+}
+
+main {
+  grid-area: principal;
+
+  display: grid;
+  gap: var(--espacamento-lg);
+}
+
+aside {
+  grid-area: lateral;
+
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-md);
+}
+
+
+/* =========================
+   CARDS E SEÇÕES
+========================= */
+
+article,
+section {
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-lg);
+}
+
+
+/* =========================
+   PRODUTOS - GRID RESPONSIVO
+========================= */
+
+.produtos {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(15rem, 1fr));
+
+  gap: var(--espacamento-lg);
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+h1 {
+  font-size: var(--fonte-xl);
+  font-weight: 700;
+  color: var(--cor-titulo);
+  margin: 0 0 var(--espacamento-md);
+}
+
+h2 {
+  font-size: var(--fonte-lg);
+  font-weight: 700;
+  color: var(--cor-titulo);
+  margin: 0 0 var(--espacamento-sm);
+}
+
+h3 {
+  font-size: var(--fonte-base);
+  font-weight: 700;
+  color: var(--cor-subtitulo);
+  margin: 0 0 var(--espacamento-sm);
+}
+
+
+/* =========================
+   TEXTOS E LISTAS
+========================= */
+
+p {
+  margin: 0 0 var(--espacamento-md);
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: var(--espacamento-lg);
+}
+
+
+/* =========================
+   IMAGENS
+========================= */
+
+figure {
+  margin: var(--espacamento-md) 0;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--raio-borda);
+}
+
+figcaption {
+  margin-top: var(--espacamento-sm);
+  font-size: var(--fonte-xs);
+}
+
+
+/* =========================
+   SELOS
+========================= */
+
+.selo {
+  display: inline-block;
+  background: var(--cor-selo);
+  color: var(--cor-titulo);
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  font-size: var(--fonte-xs);
+  font-weight: 700;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+  display: grid;
+  gap: var(--espacamento-md);
+}
+
+fieldset {
+  display: grid;
+  gap: var(--espacamento-sm);
+
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espacamento-md);
+}
+
+legend,
+label {
+  font-weight: 700;
+}
+
+legend {
+  color: var(--cor-titulo);
+}
+
+form p {
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--espacamento-sm);
+
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-base);
+
+  color: var(--cor-texto);
+  background: var(--cor-branco);
+
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+button {
+  background: var(--cor-menu);
+  color: var(--cor-branco);
+
+  border: 0;
+  border-radius: var(--raio-borda);
+
+  padding: var(--espacamento-sm) var(--espacamento-md);
+
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-base);
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+  background: var(--cor-rodape);
+  color: var(--cor-texto-rodape);
+
+  padding: var(--espacamento-md) var(--espacamento-xl);
+
+  font-size: var(--fonte-xs);
+  text-align: center;
+}
+
+
+/* =========================
+   FOCO PELO TECLADO
+========================= */
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/*
+  Breakpoint escolhido quando há espaço suficiente
+  para conteúdo principal e barra lateral ficarem
+  lado a lado sem apertar o conteúdo.
+*/
+
+@media (min-width: 48rem) {
+  .conteudo {
+    grid-template-columns: minmax(0, 1fr) 16rem;
+
+    grid-template-areas:
+      "principal lateral";
+  }
+}
