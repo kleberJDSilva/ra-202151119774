@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FormularioPedido from "./components/FormularioPedido";
 import produtos from "./dados/produtos";
 import Cabecalho from "./components/Cabecalho";
 import ListaCards from "./components/ListaCards";
@@ -119,6 +120,9 @@ function App() {
               <li>Receba o produto em casa ou busque presencialmente.</li>
             </ol>
           </section>
+
+          
+          <FormularioPedido />
         </main>
 
         <aside>
