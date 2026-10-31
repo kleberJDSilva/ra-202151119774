@@ -1,18 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormularioPedido from "./components/FormularioPedido";
-import produtos from "./dados/produtos";
 import Cabecalho from "./components/Cabecalho";
 import ListaCards from "./components/ListaCards";
 import Rodape from "./components/Rodape";
 
 function App() {
 
+  const [produtos, setProdutos] = useState([]);
+  const [carregando, setCarregando] = useState(true);
+  const [erro, setErro] = useState(null);
   const [busca, setBusca] = useState("");
+
+  useEffect(() => {
+  fetch("/produtos.json")
+    .then((resposta) => {
+      if (!resposta.ok) {
+        throw new Error("HTTP " + resposta.status);
+      }
+
+      return resposta.json();
+    })
+    .then((dados) => setProdutos(dados))
+    .catch((e) => setErro(e.message))
+    .finally(() => setCarregando(false));
+}, []);
 
   const produtosFiltrados = produtos.filter((produto) =>
   produto.nome.toLowerCase().includes(busca.toLowerCase())
+
 );
- 
+
+ if (carregando) {
+  return <p>Carregando produtos...</p>;
+}
+
+if (erro) {
+  return (
+    <p className="erro">
+      Não foi possível carregar os produtos: {erro}
+    </p>
+  );
+}
 
   return (
     <>

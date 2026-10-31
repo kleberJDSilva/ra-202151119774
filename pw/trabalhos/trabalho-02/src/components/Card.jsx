@@ -1,6 +1,6 @@
 function Card({ item }) {
   return (
-    <article className="card">
+    <article>
       <h2>{item.nome}</h2>
 
       {item.subtitulo && (
