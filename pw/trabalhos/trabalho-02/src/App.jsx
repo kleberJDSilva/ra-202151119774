@@ -3,6 +3,8 @@ import FormularioPedido from "./components/FormularioPedido";
 import Cabecalho from "./components/Cabecalho";
 import ListaCards from "./components/ListaCards";
 import Rodape from "./components/Rodape";
+import Carregando from "./components/Carregando";
+import MensagemErro from "./components/MensagemErro";
 
 function App() {
 
@@ -29,17 +31,13 @@ function App() {
   produto.nome.toLowerCase().includes(busca.toLowerCase())
 
 );
-
- if (carregando) {
-  return <p>Carregando produtos...</p>;
+if (carregando) {
+  return <Carregando texto="Carregando produtos..." />;
 }
 
+
 if (erro) {
-  return (
-    <p className="erro">
-      Não foi possível carregar os produtos: {erro}
-    </p>
-  );
+  return <MensagemErro mensagem={erro} />;
 }
 
   return (

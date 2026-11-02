@@ -361,3 +361,23 @@ textarea:focus {
       "principal lateral";
   }
 }
+
+/* Mensagens de carregamento e erro */
+.carregando {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.erro {
+  padding: 15px;
+  border: 1px solid #b00020;
+  background-color: #ffe6e6;
+  color: #700015;
+  margin: 20px;
+}
+
+.erro button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
