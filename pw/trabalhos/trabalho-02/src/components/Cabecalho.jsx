@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 function Cabecalho() {
   return (
     <>
@@ -9,11 +11,12 @@ function Cabecalho() {
         </p>
       </header>
 
-      <nav>
-        <a href="#inicio">Início</a>
-        <a href="#como-pedir">Como pedir</a>
-        <a href="#cardapio">Cardápio</a>
-        <a href="#fazer-pedido">Fazer pedido</a>
+       <nav>
+        <NavLink to="/">Início</NavLink>
+        <NavLink to="/como-pedir">Como pedir</NavLink>
+        <NavLink to="/cardapio">Cardápio</NavLink>
+        <NavLink to="/pedido">Fazer pedido</NavLink>
+        <NavLink to="/sobre">Sobre</NavLink>
       </nav>
     </>
   );

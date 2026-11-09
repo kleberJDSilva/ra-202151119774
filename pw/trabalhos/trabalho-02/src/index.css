@@ -381,3 +381,28 @@ textarea:focus {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+
+.inicio-conteudo {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.inicio-conteudo figure {
+  flex: 2;
+}
+
+.inicio-conteudo figure img {
+  width: 100%;
+}
+
+.inicio-conteudo aside {
+  flex: 1;
+}
+
+@media (max-width: 800px) {
+  .inicio-conteudo {
+    flex-direction: column;
+  }
+}
