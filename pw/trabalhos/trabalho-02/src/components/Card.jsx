@@ -1,8 +1,11 @@
+import { Link } from "react-router";
 function Card({ item }) {
   return (
     <article>
-      <h2>{item.nome}</h2>
-
+      <Link to={`/produtos/${item.id}`}>
+          {item.nome}
+        </Link>
+        
       {item.subtitulo && (
         <h3>{item.subtitulo}</h3>
       )}

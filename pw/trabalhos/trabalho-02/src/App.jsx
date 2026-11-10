@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router";
-
+import Detalhe from "./pages/Detalhe";
 import Layout from "./components/Layout";
 import Inicio from "./pages/Inicio";
 import ComoPedir from "./pages/ComoPedir";
@@ -17,6 +17,13 @@ function App() {
         <Route path="/cardapio" element={<Cardapio />} />
         <Route path="/pedido" element={<Pedido />} />
         <Route path="/sobre" element={<Sobre />} />
+        
+        
+        <Route 
+          path="/produtos/:id" 
+          element={<Detalhe />}/>
+
+
         <Route path="*" element={<NaoEncontrada />} />
       </Route>
     </Routes>
