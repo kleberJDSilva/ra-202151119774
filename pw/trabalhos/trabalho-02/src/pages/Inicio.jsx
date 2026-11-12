@@ -48,6 +48,20 @@ function Inicio() {
               Ver cardápio
             </Link>
           </p>
+           <h3>Não encontrou seu produto preferido em nosso cardápio?</h3>
+
+            <p>
+            Envie uma solicitação que podemos incluir no cardápio.   
+          </p>
+          <p>
+            Telefone: (11) 99999-9999
+          </p>
+          <p>E-mail: Pãozão@exemplo.org</p>
+
+          <p>
+            Horário de atendimento: Seg a sex, 9h às 17h.
+          </p>
+
         </aside>
       </div>
     </section>

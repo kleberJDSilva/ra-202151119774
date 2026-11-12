@@ -16,7 +16,6 @@ function Cabecalho() {
 
        <nav>
         <NavLink to="/">Início</NavLink>
-        <NavLink to="/como-pedir">Como pedir</NavLink>
         <NavLink to="/cardapio">Cardápio</NavLink>
         <NavLink to="/pedido">Fazer pedido</NavLink>
         <NavLink to="/sobre">Sobre</NavLink>
