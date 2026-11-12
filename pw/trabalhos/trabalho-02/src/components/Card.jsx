@@ -1,5 +1,9 @@
 import { Link } from "react-router";
+import { useCarrinho } from "../contexts/CarrinhoContext";
 function Card({ item }) {
+  const { adicionarProduto } = useCarrinho();
+
+
   return (
     <article>
       <Link to={`/produtos/${item.id}`}>
@@ -21,6 +25,11 @@ function Card({ item }) {
           {selo}
         </p>
       ))}
+
+      <button onClick={() => adicionarProduto(item)}>
+        Adicionar ao carrinho
+      </button>
+      
     </article>
   );
 }

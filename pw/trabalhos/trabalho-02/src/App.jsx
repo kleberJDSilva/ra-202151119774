@@ -7,9 +7,11 @@ import Cardapio from "./pages/Cardapio";
 import Pedido from "./pages/Pedido";
 import Sobre from "./pages/Sobre";
 import NaoEncontrada from "./pages/NaoEncontrada";
+import { CarrinhoProvider } from "./contexts/CarrinhoContext";
 
 function App() {
   return (
+    <CarrinhoProvider>
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Inicio />} />
@@ -27,6 +29,7 @@ function App() {
         <Route path="*" element={<NaoEncontrada />} />
       </Route>
     </Routes>
+      </CarrinhoProvider>
   );
 }
 
